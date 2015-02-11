@@ -1,0 +1,14 @@
+#auth-index {
+
+	.scroll-content {
+	  @include background-image-retina('../img/background', 'png', 320px, 568px);
+	}
+
+	#logo {
+		@include background-image-retina('../img/logo', 'png', 220px, 75px);
+		margin: 20px;
+		width: 220px;
+		height: 75px;
+		margin: 45% auto 35px auto;
+	}	
+}

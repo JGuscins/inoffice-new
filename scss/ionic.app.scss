@@ -1,68 +1,123 @@
-/*
-To customize the look and feel of Ionic, you can override the variables
-in ionic's _variables.scss file.
+@import url(http://fonts.googleapis.com/css?family=Raleway:700,400,300);
 
-For example, you might change some of the default colors:
+@mixin background-image-retina($file, $type, $width, $height) {
+  background-image: url($file + '.' + $type);
 
-$light:                           #fff !default;
-$stable:                          #f8f8f8 !default;
-$positive:                        #387ef5 !default;
-$calm:                            #11c1f3 !default;
-$balanced:                        #33cd5f !default;
-$energized:                       #ffc900 !default;
-$assertive:                       #ef473a !default;
-$royal:                           #886aea !default;
-$dark:                            #444 !default;
-*/
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 144dpi) {
+    & {
+      background-image: url($file + '@2x.' + $type);
+      background-size: $width $height;
+    }
+  }
+}
 
-// The path for our ionicons font files, relative to the built CSS in www/css
+
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
-// Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+@import "loading-index";
+@import "auth-index";
+@import "auth-login";
+@import "auth-register";
+@import "auth-forgot-password";
+@import "user-first-time";
+@import "user-setup-1";
+@import "user-setup-2";
+@import "user-dashboard";
+@import "admin-first-time";
+@import "admin-setup-1";
+@import "admin-setup-2";
+@import "admin-dashboard";
 
-h1,h2,h3,h4,h5,h6 {
-	text-align: center;
+body {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
 }
 
-.text-center {
-	text-align: center;
-	margin: 20px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Raleway', sans-serif;	
 }
 
-.slider {
-	width: 100%;
-	height: 100%;
+input {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+	color: #FFF;
+	font-size: 15px;
 }
 
-.box {
-	width: 100%;
-	height: 100%;
+.button {
+	border:none;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 47px;
+	border-radius: 5px;
 
-	&.blue {
-		background: #4387f1;
+	&.disabled,
+	&.button[disabled] {
+		opacity: 0.2;
 	}
 
-	&.yellow {
-		background: #e8ea63;
+	&.button-small-block {
+		max-width: 220px;
+		margin: 10px auto;
+		display: block;
+		clear: both;
 	}
 
-	&.pink {
-		background: #eb68eb;
+	&.button-stable,
+	&.button-stable:hover,
+	&.button-stable:active,
+	&.button-stable:focus {
+		background-color: #464646;
+		color: #FFF;
+	}
+
+	&.button-light,
+	&.button-light:hover,
+	&.button-light:active,
+	&.button-light:focus {
+		background-color: #fff200;
+		color: #464646;
+	}
+
+	&.button-clear,
+	&.button-clear:hover,
+	&.button-clear:active,
+	&.button-clear:focus {
+		min-height: 30px;
+		line-height: 30px;
+		color: #464646;
 	}
 }
 
-#logo {
-	text-align: center;
-	margin: 20px;
+.card, .list-inset {
+	background: none;
 }
 
-#profile-picture {
-	margin: 20px auto;
-	text-align: center;
-	width: 240px;
-	height: 240px;
-	line-height: 240px;
-	background: red; 
-	border-radius: 240px;
+.input-outline {
+	background: none;
+	border: 2px solid #FFF;
+	border-radius: 5px;
+
+	input {
+		background: none;
+		border-radius: 3px;
+		color: #FFF !important;
+		// line-height: 33px;
+	}
+
+	.icon {
+		font-size: 20px;
+		color: #FFF;
+		min-width: 25px;
+	}
+}
+
+*::-webkit-input-placeholder {
+  color: #FFF !important;
 }

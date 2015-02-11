@@ -1,0 +1,42 @@
+#loading-index {
+
+	.scroll-content {
+	  @include background-image-retina('../img/background', 'png', 320px, 568px);
+	}
+
+	#logo {
+		@include background-image-retina('../img/logo', 'png', 220px, 75px);
+		margin: 20px;
+		width: 220px;
+		height: 75px;
+		margin: 55% auto 35px auto;
+	}	
+
+	#progress-bar {
+		background: #464646;
+		width: 220px;
+		height: 10px;
+		margin: 0 auto;
+		border-radius: 16px;
+
+		span {
+			background: #fff200;
+			height: 16px;
+			width: 50%;
+			display: inline-block;
+			top: -3px;
+			left: 0px;
+			position: relative;
+			border-radius: 10px;
+			border: 3px solid rgba(255,255,255,0.2);
+		}
+	}
+
+	#percents {
+		font-family: 'Raleway', sans-serif;
+		text-align: center;
+		font-size: 18px;
+		color: #fff200;
+		margin-top: 10px;
+	}
+}
